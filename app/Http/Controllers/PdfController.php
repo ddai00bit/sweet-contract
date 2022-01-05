@@ -21,6 +21,11 @@ class PdfController extends Controller
         return $pdf->stream('document.pdf');
     }
 
+    public function form()
+    {
+        return view('form');
+    }
+
     /**
      * Show the form for creating a new resource.
      *
