@@ -17,4 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dynamic_pdf',[\App\Http\Controllers\PDFController::class, 'index']);
+Route::get('/dynamic_pdf',[\App\Http\Controllers\PDFController::class, 'index'])->name('demo.pdf');
+Route::get('/dynamic_pdf_true',[\App\Http\Controllers\PDFController::class, 'export_pdf'])->name('export.pdf');
+
+Route::get('/dangky',[\App\Http\Controllers\PDFController::class, 'login'])->name('login');
+Route::post('/register',[\App\Http\Controllers\PartnerController::class, 'register'])->name('register');

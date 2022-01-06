@@ -4,14 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use niklasravnsborg\LaravelPdf\Facades\Pdf;
+use Illuminate\Support\Facades\Session;
 
-class PdfController extends Controller
+class PDFController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
+    public function login()
+    {
+        return view('form');
+    }
     public function index()
     {
         $data = [
@@ -19,6 +20,15 @@ class PdfController extends Controller
         ];
         $pdf = PDF::loadView('demo_pdf', $data);
         return $pdf->stream('document.pdf');
+    }
+
+    public function export_pdf()
+    {
+        $info = Session::get('info');
+        $data['info'] = $info;
+        $pdf = PDF::loadView('pdf', $data);
+
+        return $pdf->stream('hop-dong.pdf');
     }
 
     public function form()
