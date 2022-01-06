@@ -85,7 +85,7 @@ class PartnerController extends Controller
                 <div class="row">
                     <div class="col-md-3"></div>
                     <div class="col-md-6" style="text-align: center">
-                        <a href="'. route("export.pdf").'" class="btn btn-danger" target="blank">Tạo file PDF</a>
+                        <a href="'. route("export.pdf").'" class="btn btn-danger" target="blank">Xác nhận thông tin và tạo file PDF</a>
                     </div>
                     <div class="col-md-3"></div>
 
