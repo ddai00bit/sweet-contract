@@ -22,3 +22,7 @@ Route::get('/dynamic_pdf_true',[\App\Http\Controllers\PDFController::class, 'exp
 
 Route::get('/dangky',[\App\Http\Controllers\PDFController::class, 'login'])->name('dangky');
 Route::post('/register',[\App\Http\Controllers\PartnerController::class, 'register'])->name('register');
+
+Route::get('/demo',function (){
+   dd(\App\Models\Partner::all());
+});
